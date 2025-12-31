@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* 
+   * Palette de couleurs professionnelle pour "Entrepreneurs Épanouis"
+   * Primary: Deep Teal/Blue (Trust, Depth, Stability)
+   * Secondary: Soft Gold/Sand (Authenticity, Warmth, Wellness)
+   * Accent: Lighter/Vibrant version of primary for CTAs
+   * Neutral: Off-whites and soft grays for readability
+   */
+  --background: #FDFBF7; /* Very light warm white */
+  --foreground: #1F2937; /* Dark gray for text */
+  
+  --primary: #0F4C5C; /* Deep Teal */
+  --primary-light: #1A6B80;
+  --secondary: #D4A373; /* Soft Gold */
+  --secondary-light: #E6B88A;
+  
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  
+  --accent: #E36414; /* Warm terracotta for distinct accents if needed, or stick to secondary */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
