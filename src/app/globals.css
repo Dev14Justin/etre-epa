@@ -37,8 +37,8 @@
   --color-accent: var(--accent);
 
   /* Fonts */
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-montserrat);
 }
 
 body {

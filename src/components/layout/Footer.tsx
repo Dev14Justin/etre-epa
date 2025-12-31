@@ -49,15 +49,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-          <p>&copy; {currentYear} Entrepreneurs Épanouis. Tous droits réservés.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/mentions-legales" className="hover:text-gray-300">Mentions Légales</Link>
-            <Link href="/politique-confidentialite" className="hover:text-gray-300">Confidentialité</Link>
-            <Link href="/cgv" className="hover:text-gray-300">CGV</Link>
-          </div>
+        <div className="border-t border-gray-800 pt-8 m-auto items-center text-sm text-gray-500">
+          <p className='text-center'>&copy; {currentYear} Entrepreneurs Épanouis. Tous droits réservés.</p>
+          
         </div>
       </div>
     </footer>
   );
 }
+
+
+{/* <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link href="/mentions-legales" className="hover:text-gray-300">Mentions Légales</Link>
+            <Link href="/politique-confidentialite" className="hover:text-gray-300">Confidentialité</Link>
+            <Link href="/cgv" className="hover:text-gray-300">CGV</Link>
+          </div> */}
