@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,58 +9,71 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1">
-            <Link href="/" className="font-serif text-xl font-bold text-white mb-4 block">
-              ENTREPRENEURS ÉPANOUIS
+            <Link href="/" className="mb-6 block">
+              <img
+                src="/LOGO.png"
+                alt="Entrepreneurs Épanouis"
+                className="h-12 w-auto invert opacity-80 hover:opacity-100 transition-opacity"
+              />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Aider les coachs et experts du mieux-être à bâtir un business premium aligné avec leurs valeurs.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs italic">
+              &quot;Votre vocation mérite un business à sa hauteur.&quot;
             </p>
           </div>
 
           {/* Links */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Navigation</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-secondary mb-4">
+              Navigation
+            </h3>
             <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-base text-gray-300 hover:text-white transition-colors">
-                  Accueil
-                </Link>
-              </li>
-              <li>
-                <Link href="/a-propos" className="text-base text-gray-300 hover:text-white transition-colors">
-                  À Propos
-                </Link>
-              </li>
-              <li>
-                <Link href="/diagnostic" className="text-base text-gray-300 hover:text-white transition-colors">
-                  Diagnostic Stratégique
-                </Link>
-              </li>
+              {[
+                { name: "Accueil", href: "/" },
+                { name: "La Méthode", href: "/la-methode" },
+                { name: "Nos Programmes", href: "/nos-programmes" },
+                { name: "À Propos", href: "/a-propos" },
+                { name: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-base text-gray-300 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact / Social (Placeholder) */}
+          {/* Contact */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h3>
-            <p className="text-gray-300 text-sm mb-2">
-              contact@entrepreneurs-epanouis.com
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-secondary mb-4">
+              Contact
+            </h3>
+            <p className="text-gray-300 text-base mb-6">
+              hello@entrepreneurs-epanouis.com
             </p>
-            {/* Social icons can be added here later */}
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 m-auto items-center text-sm text-gray-500">
-          <p className='text-center'>&copy; {currentYear} Entrepreneurs Épanouis. Tous droits réservés.</p>
-          
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <p>
+            &copy; {currentYear} Entrepreneurs Épanouis. Tous droits réservés.
+          </p>
+          <p className="mt-4 md:mt-0 italic">
+            Propulsé par{" "}
+            <a
+              href="https://p5sog.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              P5SOG
+            </a>
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
-
-{/* <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/mentions-legales" className="hover:text-gray-300">Mentions Légales</Link>
-            <Link href="/politique-confidentialite" className="hover:text-gray-300">Confidentialité</Link>
-            <Link href="/cgv" className="hover:text-gray-300">CGV</Link>
-          </div> */}
